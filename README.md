@@ -1,1 +1,1 @@
-Kodların neredeyse çoğunu videolardan ve eğitim içeriklerinden buldum, yeni yeni öğreniyorum.
+Kod kalıplarını videolardan ve eğitim içeriklerinden ödünçaldım :( . Yeni yeni öğreniyorum.
