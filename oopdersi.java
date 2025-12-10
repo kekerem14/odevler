@@ -9,7 +9,6 @@ public class Main {
         Gun pzt = new Gun(mat, edebiyat, ingilizce, almanca, muzik);
         Gun sali = new Gun(almanca, muzik, ingilizce, edebiyat, mat);
         System.out.println(pzt);
-        System.out.println(sali);
     }
 }
 
