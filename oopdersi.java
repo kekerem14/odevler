@@ -1,70 +1,54 @@
-class Ders {
-    private String ogretmen;
-    private String odev;
-    private int yaziliNotu;
-    private int sozluNotu;
+public class Main {
+    void main() {
+        Ders mat = new Ders("Murat Hoca","Test Çözme","70","100");
+        Ders edebiyat = new Ders("Mustafa Hoca","Şiir Yazma","rastgele not:D","100");
+        Ders almanca = new Ders("Derya Hoca","Dativ Örnek Cümle Yazma","92","90");
+        Ders ingilizce = new Ders("Tümay Hoca","Workbook 2. Ünite bitirme","100","94");
+        Ders muzik = new Ders("Aysel Hoca","Türkü Ezber","100","100");
 
-    public Ders(String ogretmen, String odev, int yaziliNotu, int sozluNotu){
+        Gun pzt = new Gun(mat, edebiyat, ingilizce, almanca, muzik);
+        Gun sali = new Gun(almanca, muzik, ingilizce, edebiyat, mat);
+        System.out.println(pzt);
+        System.out.println(sali);
+    }
+}
+
+class Ders {
+    String ogretmen;
+    String odev;
+    String yaziliNotu;
+    String sozluNotu;
+
+    Ders(String ogretmen, String odev, String yaziliNotu, String sozluNotu) {
         this.ogretmen = ogretmen;
         this.odev = odev;
         this.yaziliNotu = yaziliNotu;
         this.sozluNotu = sozluNotu;
     }
-
-    public void ekranaYazdir() {
-        System.out.println("Öğretmen: " + ogretmen);
-        System.out.println("Ödev: " + odev);
-        System.out.println("Yazılı Notu: " + yaziliNotu);
-        System.out.println("Sözlü Notu: " + sozluNotu);
-    }
 }
 
-class Pazartesi {
-    private Ders matematik;
-    private Ders edebiyat;
-
-    public Pazartesi() {
-        matematik = new Ders("Ahmet Hoca", "Yazı Ödevi", 95, 70);
-        edebiyat = new Ders("Mehmet Hoca", "Şiir Ezberleme", 85, 80);
+class Gun {
+    public String toString() {
+        return
+                ders1.ogretmen + " - " + ders1.odev + " - " + ders1.yaziliNotu + " - " + ders1.sozluNotu + "\n" +
+                ders2.ogretmen + " - " + ders2.odev + " - " + ders2.yaziliNotu + " - " + ders2.sozluNotu + "\n" +
+                ders3.ogretmen + " - " + ders3.odev + " - " + ders3.yaziliNotu + " - " + ders3.sozluNotu + "\n" +
+                ders4.ogretmen + " - " + ders4.odev + " - " + ders4.yaziliNotu + " - " + ders4.sozluNotu + "\n" +
+                ders5.ogretmen + " - " + ders5.odev + " - " + ders5.yaziliNotu + " - " + ders5.sozluNotu;
     }
 
-    public void ekranaYazdir() {
-        System.out.println("--- Pazartesi Dersleri ---");
-        System.out.println("Matematik:");
-        matematik.ekranaYazdir();
-        System.out.println();
-        System.out.println("Edebiyat:");
-        edebiyat.ekranaYazdir();
-        System.out.println();
-    }
-}
+    Ders ders1;
+    Ders ders2;
+    Ders ders3;
+    Ders ders4;
+    Ders ders5;
 
-class Sali {
-    private Ders matematik;
-    private Ders edebiyat;
+    Gun(Ders ders1, Ders ders2, Ders ders3, Ders ders4, Ders ders5) {
+        this.ders1 = ders1;
+        this.ders2 = ders2;
+        this.ders3 = ders3;
+        this.ders4 = ders4;
+        this.ders5 = ders5;
 
-    public Sali() {
-        matematik = new Ders("Ahmet Hoca", "Problem Çözme", 88, 75);
-        edebiyat = new Ders("Mehmet Hoca", "Kompozisyon Yazma", 90, 85);
-    }
-
-    public void ekranaYazdir() {
-        System.out.println("--- Salı Dersleri ---");
-        System.out.println("Matematik:");
-        matematik.ekranaYazdir();
-        System.out.println();
-        System.out.println("Edebiyat:");
-        edebiyat.ekranaYazdir();
-        System.out.println();
-    }
-}
-
-class Main {
-    void main() {
-        Pazartesi p = new Pazartesi();
-        Sali s = new Sali();
-
-        p.ekranaYazdir();
-        s.ekranaYazdir();
     }
 }
